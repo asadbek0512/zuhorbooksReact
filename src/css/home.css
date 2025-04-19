@@ -1,0 +1,690 @@
+.homepage {
+  width: 100%;
+  height: auto;
+  background: #F3F2EC;
+}
+
+/* STATISTICS */
+
+.homepage .static-frame {
+  width: 100%;
+  height: 236px;
+  background: #EDEBE4;
+}
+
+.homepage .static-frame .info {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.homepage .static-frame .info .static-box {
+  width: 200px;
+  height: 116px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.homepage .static-frame .info .static-box .static-num {
+  text-align: center;
+  font-family: "Poppins";
+  font-size: 54px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 80px;
+  color: #d7b686;
+}
+
+.homepage .static-frame .info .static-box .static-text {
+  text-align: center;
+  font-family: Garamond;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: #94928B;
+
+}
+
+
+
+/** NEW PRODUCTS **/
+.homepage .new-products-frame {
+  width: 100%;
+  min-height: 605px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.homepage .main {
+  margin-top: 45px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.homepage .new-products-frame .category-title {
+  font-family: "Dancing Script";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 43px;
+}
+
+.homepage .new-products-frame .custom-card {
+  width: 290px;
+  height: 100%;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  background: #F3F2EC;
+  border: 1px solid #d4bc9f;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.homepage .new-products-frame .custom-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.homepage .new-products-frame .custom-img-wrapper {
+  background-color: #eadfd3;
+  padding: 8px;
+  border-bottom: 1px solid #e0d6c5;
+}
+
+.homepage .new-products-frame .custom-card-info {
+  padding: 12px 16px;
+  background-color: #EDEBE4;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.homepage .new-products-frame .custom-card-info .info-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.homepage .new-products-frame .custom-card-info .info-middle {
+  font-size: 14px;
+  color: #555;
+}
+
+.homepage .new-products-frame .custom-card-info .info-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.homepage .new-products-frame .custom-card-info .title {
+  font-weight: 700;
+  font-size: 17px;
+  color: #222;
+}
+
+.homepage .new-products-frame .custom-card-info .viewsva {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.homepage .new-products-frame .custom-card-info .price {
+  font-size: 18px;
+  font-weight: 700;
+  color: rgb(74, 147, 66);
+}
+
+.homepage .new-products-frame .custom-card-info .views {
+  font-size: 15px;
+  font-weight: 400;
+  color: #999;
+  display: flex;
+  align-items: center;
+}
+
+.homepage .new-products-frame .custom-card-info .size {
+  font-size: 14px;
+  color: #666;
+}
+
+/* IQTIBOS */
+
+.homepage .quote-section {
+  width: 100%;
+  height: 246px;
+  background: #EDEBE4;
+  display: flex;
+  align-items: center;
+}
+
+.homepage .quote-section .MuiContainer-root {
+  height: 100px;
+  display: flex;
+}
+
+.homepage .info-iqtibo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1px;
+  /* spacing={4} */
+}
+
+.homepage .quote-item {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 13px;
+}
+
+.homepage .quote-avatar {
+  width: 70px;
+  height: 70px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.homepage .quote-avatar:hover {
+  transform: scale(1.05);
+}
+
+.homepage .quote-box {
+  background-color: #F3F2EC;
+  border-radius: 20px;
+  margin-left: -5px;
+  padding: 15px 16px;
+  cursor: pointer;
+  max-width: 1500px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.homepage .quote-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.homepage .quote-text {
+  font-style: italic;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.homepage .quote-author {
+  margin-top: 8px;
+  text-align: right;
+  font-weight: 500;
+  font-size: 13px;
+  color: #555;
+}
+
+
+/* POPULAR DISHES */
+
+.homepage .best-seller-section {
+  width: 100%;
+  min-height: 605px;
+  background: #F3F2EC;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px
+}
+
+.homepage .best-seller-section .best-seller-card {
+  display: flex;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  margin-bottom: 50px;
+}
+
+.homepage .best-seller-section .best-seller-card .product-image {
+  display: flex;
+  justify-content: center;
+  padding: 100px;
+  margin-bottom: -50px;
+
+}
+
+.homepage .best-seller-section .best-seller-card .product-image img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+}
+
+.homepage .best-seller-section .best-seller-card .product-info {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+.homepage .best-seller-section .best-seller-card .product-info .section-title {
+  font-family: "Dancing Script";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 50px;
+  margin-bottom: 40px;
+}
+
+.homepage .best-seller-section .best-seller-card .product-info .product-name {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  font-family: "Poppins", sans-serif;
+}
+
+.homepage .best-seller-section .best-seller-card .product-info .product-desc {
+  font-size: 15px;
+  color: #555;
+  margin-bottom: 16px;
+}
+
+.homepage .best-seller-section .best-seller-card .product-info .price-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.homepage .best-seller-section .best-seller-card .product-info .price-box .new-price {
+  color: rgb(74, 147, 66);
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.homepage .best-seller-section .best-seller-card .product-info .rating-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.homepage .best-seller-section .best-seller-card .product-info .rating-box .rating-text {
+  font-size: 15px;
+  color: #444;
+}
+
+.homepage .best-seller-section .best-seller-card .product-info .views-text {
+  font-size: 15px;
+  color: #777;
+  margin-bottom: 5px;
+}
+
+.homepage .best-seller-section .best-seller-card .product-info .view-Name {
+  font-size: 20px;
+  color: #777;
+  margin-bottom: -5px;
+}
+
+.homepage .best-seller-section .best-seller-card .product-info .shop-btn {
+  background-color: #da9909;
+  color: white;
+  font-weight: 600;
+  width: 130px;
+  margin-top: 12px;
+  transition: all 0.3s ease;
+}
+
+.homepage .best-seller-section .best-seller-card .product-info .shop-btn:hover {
+  background-color: #d48900;
+}
+
+
+/** ADVERTISEMENT **/
+
+.homepage .ads-restaurant-frame {
+  width: 100%;
+  height: 693px;
+  display: flex;
+  overflow: hidden;
+  transform: perspective(0px);
+  box-shadow: -3px 0px 20px 14px #34343480;
+}
+
+.homepage .ads-restaurant-frame .ads-video {
+  width: 100%;
+  background: #0c0e12;
+  display: flex;
+  box-shadow: 0px -8px 90px rgb(215 215 255);
+  transform: scale(1.5);
+  overflow: hidden;
+}
+
+/** ACTIVE USERS **/
+
+.homepage .active-users-frame {
+  width: 100%;
+  height: 550px;
+  display: flex;
+  background: #F3F2EC;
+}
+
+.homepage .active-users-frame .main {
+  margin-top: 65px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.homepage .active-users-frame .category-title {
+
+
+  font-family: "Dancing Script";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 43px;
+}
+
+.homepage .cards-frame {
+  width: 100%;
+  margin-top: 30px;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.homepage .cards-frame .card-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.homepage .cards-frame .card {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+  border: 3px solid #fffc9f;
+  box-shadow: 0 0 8px rgba(19, 29, 19, 0.5);
+}
+
+.homepage .cards-frame .card:hover {
+  transform: scale(1.05);
+}
+
+.homepage .cards-frame .card img {
+  width: 290px;
+  height: 290px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.homepage .cards-frame .member-nickname {
+  margin-top: 12px;
+  background: #f6f0de;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(-5px);
+  transition: all 0.3s ease-in-out;
+  pointer-events: none;
+}
+
+.homepage .cards-frame .card-wrapper:hover .member-nickname {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.homepage .cards-frame .no-data {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: capitalize;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 34px;
+}
+
+/** EVENTS **/
+
+.homepage .events-frame {
+  width: 100%;
+  height: 745px;
+  display: flex;
+}
+
+.homepage .events-frame .category-title {
+  font-family: "Dancing Script";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 43px;
+  padding-top: 20px;
+}
+
+.homepage .events-frame .events-main {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.homepage .events-frame .events-main .events-text {
+  width: auto;
+  height: 70px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.homepage .events-frame .events-main .prev-next-frame {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  margin: 40px 0 40px 0;
+  height: 25px;
+}
+
+.homepage .events-frame .dot-frame-pagination {
+  position: relative;
+  width: auto;
+  display: flex;
+}
+
+.homepage .events-frame .events-main .events-info {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+
+.homepage .events-frame .events-info .events-info-frame {
+  position: relative;
+  width: 500px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.homepage .events-frame .events-img {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  border-radius: 30px;
+  background-size: cover;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.homepage .events-frame .events-img:hover {
+  box-shadow: 0 8px 35px rgba(0, 0, 0, 0.2);
+}
+
+.homepage .events-frame .events-desc {
+  position: absolute;
+  margin-bottom: 7px;
+  padding: 10px;
+  display: flex;
+  width: 90%;
+  height: auto;
+  bottom: 5px;
+  background: #fefdf6;
+  cursor: pointer;
+  box-shadow: 0px 40px 30px rgba(25, 25, 46, 0.04);
+  border-radius: 16px;
+}
+
+.homepage .events-frame .events-desc:hover {
+  box-shadow: 0 8px 35px rgba(0, 0, 0, 0.2);
+}
+
+.homepage .events-frame .events-desc .events-bott {
+  width: 97%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.homepage .events-frame .events-desc .events-bott .bott-left {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.homepage .events-frame .bott-left .event-title-speaker {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.homepage .events-frame .event-title-speaker .event-organizator {
+  display: flex;
+  align-items: center;
+}
+
+.homepage .events-frame .event-title-speaker .event-organizator img {
+  width: 20px;
+  margin-right: 10px;
+}
+
+.homepage .events-frame .event-organizator .spec-text-author {
+  font-family: "GT Walsheim Pro";
+  font-style: normal;
+  line-height: 34px;
+  color: #140342;
+}
+
+.homepage .events-frame .events-desc {
+  position: absolute;
+  bottom: 15px;
+  width: 90%;
+  background: #F3F2EC;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.homepage .events-frame .events-desc:hover {
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.12);
+  transform: translateY(-4px);
+  background: #EDEBE4;
+}
+
+.homepage .events-frame .bott-left .event-title-speaker {
+  display: flex;
+  justify-content: flex-end;
+  /* O‘ngga surish */
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+
+.homepage .events-frame .events-desc .event-title-speaker strong {
+  font-size: 18px;
+  color: #1f2937;
+  /* dark gray */
+  font-weight: 600;
+}
+
+.homepage .events-frame .text-desc {
+  font-size: 15px;
+  line-height: 24px;
+  color: #4b5563;
+  /* muted text */
+  font-family: 'GT Walsheim Pro', sans-serif;
+}
+
+.homepage .events-frame .bott-info {
+  display: flex;
+  gap: 20px;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.homepage .events-frame .bott-info .bott-info-main {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.homepage .events-frame .bott-info .bott-info-main img {
+  margin-right: 10px;
+}
+
+.homepage .events-frame .swiper-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.homepage .events-frame .swiper-pagination-bullet {
+  margin-right: 5px;
+  width: 8px;
+  height: 8px;
+  text-align: center;
+  opacity: 1;
+  background: #f8f8ff;
+  border-radius: 50%;
+}
+
+.homepage .events-frame .swiper-pagination-bullet-active {
+  background: #343434;
+  border-radius: 50%;
+}
