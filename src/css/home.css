@@ -166,11 +166,25 @@
 
 .homepage .quote-section {
   width: 100%;
-  height: 246px;
+  height: 200px;
+  margin-bottom: 50px;
   background: #EDEBE4;
   display: flex;
   align-items: center;
+  overflow: hidden;
+  position: relative;
 }
+.homepage .quote-track-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+.homepage .quote-track {
+  display: flex;
+  width: max-content;
+  animation: scroll-forever 40s linear infinite;
+  gap: 30px;
+}
+
 
 .homepage .quote-section .MuiContainer-root {
   height: 100px;
@@ -209,7 +223,7 @@
   margin-left: -5px;
   padding: 15px 16px;
   cursor: pointer;
-  max-width: 1500px;
+  max-width: 500px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -232,6 +246,16 @@
   color: #555;
 }
 
+
+/* Smooth infinite scroll animation */
+@keyframes scroll-forever {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-33.333%);
+  }
+}
 
 /* POPULAR DISHES */
 

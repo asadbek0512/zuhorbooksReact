@@ -95,7 +95,7 @@ export default function Products(props: ProductsProps) {
                 <Stack flexDirection={"column"} alignItems={"centera"}>
                     <Stack className={"avatar-big-box"}>
                         <Stack className={"top-text"}>
-                            <p>Burak Restaurant</p>
+                            <p>Bookstore</p>
                             <Stack className={"single-search-big-box"}>
                                 <input
                                     type={"search"}
@@ -119,7 +119,44 @@ export default function Products(props: ProductsProps) {
                             </Stack>
                         </Stack>
                     </Stack>
+                    <Stack className={"product-category"}>
+                        <Stack className={"product-category"}>
+                            <div className={"category-main"}>
 
+                                <div
+                                    className={`category-label ${productSearch.productCollection === ProductCollection.OTHER ? "active" : ""}`}
+                                    onClick={() => searchCollectionHandler(ProductCollection.OTHER)}
+                                >
+                                    Fiction Books
+                                </div>
+                                <div
+                                    className={`category-label ${productSearch.productCollection === ProductCollection.DESSERT ? "active" : ""}`}
+                                    onClick={() => searchCollectionHandler(ProductCollection.DESSERT)}
+                                >
+                                    For Children
+                                </div>
+                                <div
+                                    className={`category-label ${productSearch.productCollection === ProductCollection.DRINK ? "active" : ""}`}
+                                    onClick={() => searchCollectionHandler(ProductCollection.DRINK)}
+                                >
+                                    Business and Marketing
+                                </div>
+                                <div
+                                    className={`category-label ${productSearch.productCollection === ProductCollection.SALAD ? "active" : ""}`}
+                                    onClick={() => searchCollectionHandler(ProductCollection.SALAD)}
+                                >
+                                    Personal Development
+                                </div>
+                                <div
+                                    className={`category-label ${productSearch.productCollection === ProductCollection.DISH ? "active" : ""}`}
+                                    onClick={() => searchCollectionHandler(ProductCollection.DISH)}
+                                >
+                                    Religious
+                                </div>
+                                {/* Yana davom ettirishing mumkin */}
+                            </div>
+                        </Stack>
+                    </Stack>
                     <Stack className={"dishes-filter-section"}>
                         <Stack className={"dishes-filter-box"}>
                             <Button
@@ -142,72 +179,37 @@ export default function Products(props: ProductsProps) {
                             </Button>
                         </Stack>
                     </Stack>
-
-
-
                     <Stack className={"list-category-section"}>
-                        <Stack className={"product-category"}>
-                            <Stack className={"product-category"}>
-                                <div className={"category-main"}>
-                                    <div
-                                        className={`category-label-menu`}
-                                    >
-                                        Menu
-                                    </div>
-                                    <div
-                                        className={`category-label ${productSearch.productCollection === ProductCollection.OTHER ? "active" : ""}`}
-                                        onClick={() => searchCollectionHandler(ProductCollection.OTHER)}
-                                    >
-                                        Badiiy kitoblar
-                                    </div>
-                                    <div
-                                        className={`category-label ${productSearch.productCollection === ProductCollection.DESSERT ? "active" : ""}`}
-                                        onClick={() => searchCollectionHandler(ProductCollection.DESSERT)}
-                                    >
-                                        Diniy
-                                    </div>
-                                    <div
-                                        className={`category-label ${productSearch.productCollection === ProductCollection.DRINK ? "active" : ""}`}
-                                        onClick={() => searchCollectionHandler(ProductCollection.DRINK)}
-                                    >
-                                        Biznes va marketing
-                                    </div>
-                                    <div
-                                        className={`category-label ${productSearch.productCollection === ProductCollection.SALAD ? "active" : ""}`}
-                                        onClick={() => searchCollectionHandler(ProductCollection.SALAD)}
-                                    >
-                                        Shaxsiy rivojlanish
-                                    </div>
-                                    <div
-                                        className={`category-label ${productSearch.productCollection === ProductCollection.DISH ? "active" : ""}`}
-                                        onClick={() => searchCollectionHandler(ProductCollection.DISH)}
-                                    >
-                                        Oila
-                                    </div>
-                                    {/* Yana davom ettirishing mumkin */}
-                                </div>
-                            </Stack>
-                        </Stack>
                         <Stack className={"product-wrapper"}>
                             {products.length !== 0 ? (
                                 products.map((product: Product) => {
                                     const imagePath = `${serverApi}/${product.productImages[0]}`;
-                                    const sizeVolume =
-                                        product.productCollection === ProductCollection.DRINK
-                                            ? product.productVolume + " litre"
-                                            : product.productSize + " size"
                                     return (
                                         <Stack
                                             key={product._id}
                                             className={"product-card"}
                                             onClick={() => chooseDishHandler(product._id)}
                                         >
-                                            <Stack
+                                            <Box
                                                 className={"product-img"}
                                                 sx={{ backgroundImage: `url(${imagePath})` }}
-                                            >
-                                                <div className={"product-sale"}>{sizeVolume}</div>
-                                                <Button className={"shop-btn"}
+                                            ></Box>
+
+                                            <Box className={"product-info"}>
+                                                <span className={"product-title"}>{product.productName}</span>
+                                                <div className={"product-price"}>
+                                                    <MonetizationOnIcon sx={{ fontSize: "18px" }} />
+                                                    {product.productPrice.toLocaleString()}
+                                                </div>
+                                                <div className={"product-stock"}>In Stock</div>
+                                                <Button
+                                                    className={"buy-btn"}
+                                                    onClick={() => chooseDishHandler(product._id)}
+                                                >
+                                                    Shop
+                                                </Button>
+                                                <Button
+                                                    className={"add-to-cart-btn"}
                                                     onClick={(e) => {
                                                         onAdd({
                                                             _id: product._id,
@@ -218,33 +220,8 @@ export default function Products(props: ProductsProps) {
                                                         })
                                                         e.stopPropagation();
                                                     }}>
-                                                    <img
-                                                        src={"/icons/shopping-cart.svg"}
-                                                        style={{ display: "flex" }}
-                                                    />
+                                                    Add to Cart
                                                 </Button>
-                                                <Button className={"view-btn"} sx={{ right: "36px" }}>
-                                                    <Badge
-                                                        badgeContent={product.productViews}
-                                                        color="secondary"
-                                                    >
-                                                        <RemoveRedEyeIcon
-                                                            sx={{
-                                                                color:
-                                                                    product.productViews === 0 ? "gray" : "white",
-                                                            }}
-                                                        />
-                                                    </Badge>
-                                                </Button>
-                                            </Stack>
-                                            <Box className={"product-desc"}>
-                                                <span className={"product-title"}>
-                                                    {product.productName}
-                                                </span>
-                                                <div className={"product-desc"}>
-                                                    <MonetizationOnIcon />
-                                                    {product.productPrice}
-                                                </div>
                                             </Box>
                                         </Stack>
                                     );
@@ -254,7 +231,6 @@ export default function Products(props: ProductsProps) {
                             )}
                         </Stack>
                     </Stack>
-
                     <Stack className={"pagination-section"}>
                         <Pagination
                             count={

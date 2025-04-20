@@ -17,14 +17,19 @@ const quotes = [
         quote: "Success is getting what you want. Happiness is wanting what you get.",
         author: "Dale Carnegie"
     },
+    {
+        image: '/img/tayson.jpg',
+        quote: "'Suv kabi bo'l, suvdi piyolaga quysa piyola  bo'p qol, chaynikka quysa chaynik bo'p qol'",
+        author: "O'zbek tayson"
+    },
 ];
 
 export default function Iqtibos() {
     return (
         <div className="quote-section homepage">
-            <Container>
-                <Stack className="info-iqtibo" direction="row" spacing={4}>
-                    {quotes.map((item, index) => (
+            <Box className="quote-track-wrapper">
+                <Box className="quote-track">
+                    {[...quotes, ...quotes, ...quotes].map((item, index) => (
                         <Stack className="quote-item" direction="row" spacing={2} alignItems="flex-start" key={index}>
                             <Avatar
                                 className="quote-avatar"
@@ -41,8 +46,8 @@ export default function Iqtibos() {
                             </Box>
                         </Stack>
                     ))}
-                </Stack>
-            </Container>
+                </Box>
+            </Box>
         </div>
     );
 }
