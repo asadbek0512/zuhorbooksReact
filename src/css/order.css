@@ -1,7 +1,7 @@
 .order-page {
 	width: 100%;
 	height: auto;
-	background: #f8f8ff;
+	background: #F3F2EC;
 	display: flex;
 }
 
@@ -15,153 +15,126 @@
 .order-page .order-left {
 	width: 860px;
 	height: auto;
+	margin-left: 40px;
+	
 }
 
-.order-page .order-right {
-	width: 360px;
-	height: auto;
-	margin-top: 86px;
-	margin-left: 30px;
-	display: flex;
-	flex-direction: column;
-}
-
-.order-page .order-right .order-info-box {
-	width: 360px;
-	height: auto;
-	padding: 20px;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	background: #f8f8ff;
-	box-shadow: 15px 14px 4px rgba(0, 0, 0, 0.25), inset -1px 0px 16px 13px rgb(24 23 112 / 20%);
-	border-radius: 16px;
-	margin-bottom: 25px;
-}
-
-.order-page .order-right .order-info-box .member-box {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-
-.order-page .order-right .order-info-box .liner {
+/* Container styling */
+.order-right {
+	position: relative;
+	padding: 25px;
 	width: 100%;
-	border: 1px solid #a1a1a1;
-	margin-top: 40px;
-	margin-bottom: 8px;
-}
-
-.order-page .order-info-box .order-user-img {
+	height: 370px;
+	background: #EDEBE4;
+	border-radius: 48px;
+	box-shadow: 12px 12px 20px rgba(0, 0, 0, 0.15), inset -1px 0px 16px 8px rgba(24, 23, 112, 0.15);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	transition: all 0.3s ease;
+	margin-top: 70px;
+	
+  }
+  
+  /* Profile header */
+  .profile-header {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin-bottom: 20px;
+  }
+  
+  /* Avatar container */
+  .profile-img-container {
 	position: relative;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-}
-
-.order-page .order-info-box .order-user-img .order-user-avatar {
-	width: 117px;
-	height: 112px;
-	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-	border-radius: 37px;
-}
-
-.order-page .order-info-box .order-user-icon-box {
+	margin-right: 20px;
+  }
+  
+  .profile-avatar {
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	object-fit: cover;
+  }
+  
+  .profile-type-icon {
 	position: absolute;
-	padding: 5px;
-	width: 30px;
-	height: 30px;
-	top: 81%;
-	right: 0;
+	bottom: 5%;
+	right: 5%;
+	background-color: rgba(0, 0, 0, 0.2);
+	border-radius: 50%;
+	padding: 8px;
+  }
+  
+  /* Profile details */
+  .profile-details {
 	display: flex;
-	background: rgba(0, 0, 0, 0.33);
-	border-radius: 37px;
-}
-
-.order-page .order-user-icon-box .order-user-prof-img {
-	filter: brightness(0) invert(1);
-}
-
-.order-page .order-info-box .order-user-name {
-	margin-top: 10px;
-	font-family: 'Commissioner';
-	font-style: normal;
-	font-weight: 500;
-	font-size: 28px;
-	line-height: 36px;
-	color: #08090d;
-}
-
-.order-page .order-info-box .order-user-prof {
-	font-family: 'Commissioner';
-	font-style: normal;
-	font-weight: 500;
-	font-size: 20px;
-	line-height: 36px;
-	color: #a1a1a1;
-}
-
-.order-page .order-info-box .order-user-address {
-	width: 90%;
+	flex-direction: column;
+  }
+  
+  .profile-name {
+	font-family: 'Poppins', sans-serif;
+	font-size: 24px;
+	font-weight: 600;
+	color: #333;
+  }
+  
+  .profile-type {
+	font-family: 'Poppins', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	color: #777;
+  }
+  
+  /* Profile address */
+  .profile-info {
 	display: flex;
 	flex-direction: row;
-}
-
-.order-page .order-info-box .spec-address-txt {
-	margin-left: 5px;
-	font-family: 'DM Sans';
-	font-style: normal;
-	font-weight: 400;
-	font-size: 16px;
-	line-height: 24px;
-	color: #616164;
-}
-
-.order-page .order-info-box .card-input {
-	margin-top: 10px;
-	padding: 10px;
-	width: 100%;
-	height: 40px;
-	background: #f5f5f5;
-	border-radius: 10px;
-	font-family: 'Nunito';
-	font-style: normal;
-	font-weight: 400;
-	font-size: 16px;
-	line-height: 22px;
-	border: 0.5px solid #b3a6a6;
-	letter-spacing: -0.02em;
-	color: #434141;
-}
-
-.order-page .order-info-box .card-half-input {
-	margin-top: 10px;
-	padding: 10px;
-	width: 49%;
-	height: 40px;
-	background: #f5f5f5;
-	border-radius: 10px;
-	font-family: 'Nunito';
-	font-style: normal;
-	font-weight: 400;
-	font-size: 16px;
-	line-height: 22px;
-	border: 0.5px solid #b3a6a6;
-	letter-spacing: -0.02em;
-	color: #434141;
-}
-
-.order-page .order-info-box .cards-box {
-	margin-top: 35px;
-	width: 80%;
+	align-items: center;
+	margin-bottom: 20px;
+  }
+  
+  .profile-address {
 	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
+	align-items: center;
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	color: #555;
+  }
+  
+  .profile-address span {
+	margin-left: 10px;
+  }
+  
+  /* Social links */
+  .profile-social-links {
+	display: flex;
+	justify-content: flex-start;
+	margin-top: 40px;
+	gap: 10px; /* Iconlar orasidagi masofa */
+}
+.social-icons {
+	display: flex;
+	gap: 20px; /* Iconlar orasidagi masofa bu yerga kerak */
 }
 
-.order-page .order-info-box .css-wca78v-MuiButtonBase-root-MuiButton-root {
-	min-width: 160px;
-}
+  
+  .social-icons svg {
+	cursor: pointer;
+	color: #555;
+	font-size: 32px; /* iconlar kattalashdi */
+	transition: color 0.3s ease;
+  }
+  
+  .social-icons svg:hover {
+	color: #0078d4;
+  }
+  
+  
 
 .order-page .order-left .order-nav-frame {
 	width: 100%;
@@ -199,8 +172,8 @@
 	width: 100%;
 	max-height: 285px;
 	margin-bottom: 25px;
-	background: #f8f8ff;
-	box-shadow: -13px 16px 4px rgba(0, 0, 0, 0.25), inset 0px -3px 20px 11px #18177033;
+	background: #EDEBE4;;
+	box-shadow: 3px -2px 20px 2px rgba(0, 0, 0, 0.25);
 	border-radius: 16px;
 }
 
@@ -242,6 +215,8 @@
 	height: 47px;
 	border-radius: 29px;
 	background-size: cover;
+	border: 2px solid #c4c4c4;
+	box-shadow: 0 0 8px rgba(19, 29, 19, 0.5);
 }
 
 .order-page .order-box-scroll .orders-name-price .title-dish {
@@ -295,10 +270,12 @@
 	border-radius: 10px;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 	max-height: 40px;
+	color: #f8f8ff;
+	background: #c2b143;
 }
 
 .order-page .order-main-content .total-price-box .pay-button {
-	background: #56b74d;
+	background: #828282;
 	color: #f8f8ff;
 	border-radius: 10px;
 	max-height: 40px;
@@ -306,7 +283,7 @@
 }
 
 .order-page .order-main-content .total-price-box .verify-button {
-	background: #0288d1;
+	background: #828282;
 	color: #f8f8ff;
 	border-radius: 10px;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25);

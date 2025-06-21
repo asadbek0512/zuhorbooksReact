@@ -6,6 +6,7 @@ import { retrievePopularDishes } from "./selector";
 import { Product } from "../../../lib/types/product";
 import { serverApi } from "../../../lib/config";
 import VisibilityIcon from "@mui/icons-material/Visibility";
+import { useHistory } from "react-router-dom";
 
 const popularDishesRetriever = createSelector(
     retrievePopularDishes,
@@ -14,7 +15,12 @@ const popularDishesRetriever = createSelector(
 
 export default function PopularDishes() {
     const { popularDishes } = useSelector(popularDishesRetriever);
+    const history = useHistory();
 
+
+    const chooseDishHandler = (id: string) => {
+        history.push(`/products/${id}`)
+    };
     return (
         <div className="best-seller-section">
             <Container>
@@ -41,7 +47,10 @@ export default function PopularDishes() {
                                     <Typography className="views-text">
                                         {product.productViews} views <VisibilityIcon className="view-Name" />
                                     </Typography>
-                                    <Button className="shop-btn">SHOP NOW</Button>
+                                    <Button 
+                                    className="shop-btn"
+                                    onClick={() => chooseDishHandler(product._id)}
+                                    >Shop now</Button>
                                 </Box>
                             </Box>
                         );

@@ -80,13 +80,13 @@ export default function Basket(props: BasketProps) {
         id="account-menu"
         open={open}
         onClose={handleClose}
-        // onClick={handleClose}
         PaperProps={{
           elevation: 0,
           sx: {
             overflow: "visible",
             filter: "drop-shadow(0px 2px 8px rgba(0,0,0,0.32))",
             mt: 1.5,
+            borderRadius: "25px", // <-- bu yerga qo‘shildi
             "& .MuiAvatar-root": {
               width: 32,
               height: 32,
@@ -110,6 +110,7 @@ export default function Basket(props: BasketProps) {
         transformOrigin={{ horizontal: "right", vertical: "top" }}
         anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
       >
+
         <Stack className={"basket-frame"}>
           <Box className={"all-check-box"}>
             {cartItems.length === 0 ? (
@@ -157,6 +158,7 @@ export default function Basket(props: BasketProps) {
                 Total: ${totalPrice} ({itemsPrice} + {shippingCost})
               </span>
               <Button
+                className="order-button"
                 onClick={proceedOrderHandler}
                 startIcon={<ShoppingCartIcon />}
                 variant={"contained"}>

@@ -1,8 +1,7 @@
 export enum ProductSize {
-    SMALL = "SMALL",
-    NORMAL = "NORMAL",
-    LARGE = "LARGE",
-    SET = 'SET',
+    HARDCOVER = "HARDCOVER",
+    PAPERBACK = "PAPERBACK",
+ 
 }
 
 export enum ProductVolume {
@@ -20,9 +19,9 @@ export enum ProductStatus {
 }
 
 export enum ProductCollection {
-    DISH = "DISH",
-    SALAD = "SALAD",
-    DESSERT = "DESSERT",//? "DESERT" BITA S QILIB KETILGAN
-    DRINK = "DRINK",
-    OTHER = "OTHER",
+    RELIGIOUS = "RELIGIOUS",
+    PERSONAL = "PERSONAL",
+    BUSINES = "BUSINES",
+    FOR_CHILDREN = "FOR_CHILDREN",
+    FICTION_BOOKS = "FICTION_BOOKS",
 }

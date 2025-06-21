@@ -98,13 +98,14 @@ export default function ChosenProduct(props: ProductsProps) {
             <span className={"resto-name"}>{restaurant?.memberNick}</span>
             <span className={"resto-name"}>{restaurant?.memberPhone}</span>
             <Box className={"rating-box"}>
-              <Rating name="half-rating" defaultValue={2.5} precision={0.5} />
-              <div className={"evaluation-box"}>
-                <div className={"product-view"}>
-                  <RemoveRedEyeIcon sx={{ mr: "10px" }} />
-                  <span>{chosenProduct?.productViews}</span>
+              <Rating name="half-rating" defaultValue={4.5} precision={0.5} />
+              <div className="evaluation-box">
+                <div className="product-view" style={{ display: 'flex', alignItems: 'center', gap: '6px',marginBottom:"-10px" }}>
+                  <RemoveRedEyeIcon sx={{ fontSize: 21 }} />
+                  <span className="views">{chosenProduct?.productViews} views</span>
                 </div>
               </div>
+
             </Box>
             <p className={"product-desc"}>
               {chosenProduct?.productDesc
@@ -117,18 +118,18 @@ export default function ChosenProduct(props: ProductsProps) {
               <span>${chosenProduct?.productPrice}</span>
             </div>
             <div className={"button-box"}>
-              <Button 
-              variant="contained"
-              onClick={(e) => {
-                onAdd({
+              <Button
+                variant="contained"
+                onClick={(e) => {
+                  onAdd({
                     _id: chosenProduct._id,
                     quantity: 1,
                     name: chosenProduct.productName,
                     price: chosenProduct.productPrice,
                     image: chosenProduct.productImages[0],
-                })
-                e.stopPropagation();
-            }}>
+                  })
+                  e.stopPropagation();
+                }}>
                 Add To Basket</Button>
             </div>
           </Box>

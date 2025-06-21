@@ -2,6 +2,10 @@ import React from "react";
 import { Box, Container, Stack } from "@mui/material";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import TelegramIcon from "@mui/icons-material/Telegram";
+import YouTubeIcon from "@mui/icons-material/YouTube";
 
 const Footers = styled.div`
   width: 100%;
@@ -28,18 +32,23 @@ export default function Footer() {
               your heart and mind.
             </Box>
             <Box className="sns-context" sx={{ display: 'flex', gap: '16px', mt: 2 }}>
-              <a href="#">
-                <img src="/icons/facebook.svg" alt="Facebook" />
-              </a>
-              <a href="#">
-                <img src="/icons/twitter.svg" alt="Twitter" />
-              </a>
-              <a href="#">
-                <img src="/icons/instagram.svg" alt="Instagram" />
-              </a>
-              <a href="#">
-                <img src="/icons/youtube.svg" alt="YouTube" />
-              </a>
+              <FacebookIcon
+                onClick={() => window.open("https://www.facebook.com", "_blank")}
+                style={{ cursor: 'pointer' }}
+              />
+              <InstagramIcon
+                onClick={() => window.open("https://www.instagram.com", "_blank")}
+                style={{ cursor: 'pointer' }}
+              />
+              <TelegramIcon
+                onClick={() => window.open("https://t.me/+mFPoMiYbzz01YzRi", "_blank")}
+                style={{ cursor: 'pointer' }}
+              />
+
+              <YouTubeIcon
+                onClick={() => window.open("https://www.youtube.com", "_blank")}
+                style={{ cursor: 'pointer' }}
+              />
             </Box>
 
           </Stack>

@@ -8,6 +8,11 @@ import { T } from "../../../lib/types/common";
 import { Messages, serverApi } from "../../../lib/config";
 import MemberService from "../../services/MembertService";
 import { sweetErrorHandling, sweetTopSmallSuccessAlert } from "../../../lib/sweetAlert";
+import PersonIcon from "@mui/icons-material/Person";
+import PhoneIcon from "@mui/icons-material/Phone";
+import HomeIcon from "@mui/icons-material/Home";
+import NotesIcon from "@mui/icons-material/Notes";
+
 
 export function Settings() {
   const { authMember, setAuthMember } = useGlobals();
@@ -75,18 +80,18 @@ export function Settings() {
     const file = e.target.files[0];
     console.log("file:", file);
     const fileType = file.type,
-        validateImageTypes = ["image/jpg", "image/jpeg", "image/png"];
+      validateImageTypes = ["image/jpg", "image/jpeg", "image/png"];
 
     if (!validateImageTypes.includes(fileType)) {
-        sweetErrorHandling(Messages).then();
+      sweetErrorHandling(Messages).then();
     } else {
-        if (file) {
-            memberUpdateInput.memberImage = file;
-            setMemberUpdateInput({ ...memberUpdateInput });
-            setMemberImage(URL.createObjectURL(file));
-        }
+      if (file) {
+        memberUpdateInput.memberImage = file;
+        setMemberUpdateInput({ ...memberUpdateInput });
+        setMemberImage(URL.createObjectURL(file));
+      }
     }
-};
+  };
 
 
   return (
@@ -104,64 +109,86 @@ export function Settings() {
           </div>
         </div>
       </Box>
+
       <Box className={"input-frame"}>
         <div className={"long-input"}>
-          <label className={"spec-label"}>Username</label>
-          <input
-            className={"spec-input mb-nick"}
-            type="text"
-            placeholder={authMember?.memberNick}
-            value={memberUpdateInput.memberNick}
-            name="memberNick"
-            onChange={memberNickHandler}
-          />
+          <label className={"spec-label"}>
+            <PersonIcon className="input-icon" />
+            Username</label>
+          <div className="input-with-icon">
+            <input
+              className={"spec-input mb-nick"}
+              type="text"
+              placeholder={authMember?.memberNick}
+              value={memberUpdateInput.memberNick}
+              name="memberNick"
+              onChange={memberNickHandler}
+            />
+          </div>
         </div>
       </Box>
+
       <Box className={"input-frame"}>
         <div className={"short-input"}>
-          <label className={"spec-label"}>Phone</label>
-          <input
-            className={"spec-input mb-phone"}
-            type="text"
-            placeholder={authMember?.memberPhone ?? "no phone"}
-            value={memberUpdateInput.memberPhone}
-            name="memberPhone"
-            onChange={memberPhoneHandler}
-          />
+          <label className={"spec-label"}>
+            <PhoneIcon className="input-icon" />
+            Phone</label>
+          <div className="input-with-icon">
+            <input
+              className={"spec-input mb-phone"}
+              type="text"
+              placeholder={authMember?.memberPhone ?? "no phone"}
+              value={memberUpdateInput.memberPhone}
+              name="memberPhone"
+              onChange={memberPhoneHandler}
+            />
+          </div>
         </div>
+
         <div className={"short-input"}>
-          <label className={"spec-label"}>Address</label>
-          <input
-            className={"spec-input  mb-address"}
-            type="text"
-            placeholder={
-              authMember?.memberAddress
-                ? authMember.memberAddress
-                : "no address"
-            }
-            value={memberUpdateInput.memberAddress}
-            name="memberAddress"
-            onChange={memberAddressHandler}
-          />
+          <label className={"spec-label"}>
+            <HomeIcon className="input-icon" />
+            Address</label>
+          <div className="input-with-icon">
+            <input
+              className={"spec-input  mb-address"}
+              type="text"
+              placeholder={
+                authMember?.memberAddress
+                  ? authMember.memberAddress
+                  : "no address"
+              }
+              value={memberUpdateInput.memberAddress}
+              name="memberAddress"
+              onChange={memberAddressHandler}
+            />
+          </div>
         </div>
       </Box>
+
       <Box className={"input-frame"}>
         <div className={"long-input"}>
-          <label className={"spec-label"}>Description</label>
-          <textarea
-            className={"spec-textarea mb-description"}
-            placeholder={
-              authMember?.memberDesc ? authMember.memberDesc : "no description"
-            }
-            value={memberUpdateInput.memberDesc}
-            name="memberDesc"
-            onChange={memberDescriptionHandler}
-          />
+          <label className={"spec-label"}>
+            <NotesIcon className="input-icon" />
+            Description</label>
+          <div className="input-with-icon">
+            <textarea
+              className={"spec-textarea mb-description"}
+              placeholder={
+                authMember?.memberDesc ? authMember.memberDesc : "no description"
+              }
+              value={memberUpdateInput.memberDesc}
+              name="memberDesc"
+              onChange={memberDescriptionHandler}
+            />
+          </div>
         </div>
       </Box>
+
       <Box className={"save-box"}>
         <Button variant={"contained"} onClick={handleSubmitButton}>Save</Button>
       </Box>
     </Box>
   );
+
 }

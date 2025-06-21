@@ -1,9 +1,10 @@
 import React, { ChangeEvent, useEffect, useState } from "react";
-import { Box, Button, Container, Stack } from "@mui/material";
+import { Box, Button, Container, Stack, Typography } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import MonetizationOnIcon from "@mui/icons-material/MonetizationOn";
 import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
 import Badge from "@mui/material/Badge";
+import VisibilityIcon from "@mui/icons-material/Visibility";
 import Pagination from "@mui/material/Pagination";
 import PaginationItem from "@mui/material/PaginationItem";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
@@ -40,7 +41,7 @@ export default function Products(props: ProductsProps) {
         page: 1,
         limit: 8,
         order: "createdAt",
-        productCollection: ProductCollection.DISH,
+        productCollection: ProductCollection.RELIGIOUS,
         search: "",
     });
     const [searchText, setSearchText] = useState<string>("");
@@ -124,32 +125,32 @@ export default function Products(props: ProductsProps) {
                             <div className={"category-main"}>
 
                                 <div
-                                    className={`category-label ${productSearch.productCollection === ProductCollection.OTHER ? "active" : ""}`}
-                                    onClick={() => searchCollectionHandler(ProductCollection.OTHER)}
+                                    className={`category-label ${productSearch.productCollection === ProductCollection.FICTION_BOOKS ? "active" : ""}`}
+                                    onClick={() => searchCollectionHandler(ProductCollection.FICTION_BOOKS)}
                                 >
                                     Fiction Books
                                 </div>
                                 <div
-                                    className={`category-label ${productSearch.productCollection === ProductCollection.DESSERT ? "active" : ""}`}
-                                    onClick={() => searchCollectionHandler(ProductCollection.DESSERT)}
+                                    className={`category-label ${productSearch.productCollection === ProductCollection.FOR_CHILDREN ? "active" : ""}`}
+                                    onClick={() => searchCollectionHandler(ProductCollection.FOR_CHILDREN)}
                                 >
                                     For Children
                                 </div>
                                 <div
-                                    className={`category-label ${productSearch.productCollection === ProductCollection.DRINK ? "active" : ""}`}
-                                    onClick={() => searchCollectionHandler(ProductCollection.DRINK)}
+                                    className={`category-label ${productSearch.productCollection === ProductCollection.BUSINES ? "active" : ""}`}
+                                    onClick={() => searchCollectionHandler(ProductCollection.BUSINES)}
                                 >
                                     Business and Marketing
                                 </div>
                                 <div
-                                    className={`category-label ${productSearch.productCollection === ProductCollection.SALAD ? "active" : ""}`}
-                                    onClick={() => searchCollectionHandler(ProductCollection.SALAD)}
+                                    className={`category-label ${productSearch.productCollection === ProductCollection.PERSONAL ? "active" : ""}`}
+                                    onClick={() => searchCollectionHandler(ProductCollection.PERSONAL)}
                                 >
                                     Personal Development
                                 </div>
                                 <div
-                                    className={`category-label ${productSearch.productCollection === ProductCollection.DISH ? "active" : ""}`}
-                                    onClick={() => searchCollectionHandler(ProductCollection.DISH)}
+                                    className={`category-label ${productSearch.productCollection === ProductCollection.RELIGIOUS ? "active" : ""}`}
+                                    onClick={() => searchCollectionHandler(ProductCollection.RELIGIOUS)}
                                 >
                                     Religious
                                 </div>
@@ -200,7 +201,12 @@ export default function Products(props: ProductsProps) {
                                                 <div className={"product-price"}>
                                                     <MonetizationOnIcon sx={{ fontSize: "18px" }} />
                                                     {product.productPrice.toLocaleString()}
+                                                    <Typography className="views">
+                                                        <VisibilityIcon sx={{ fontSize: 20, marginLeft: "5px", marginRight: "5px" }} />
+                                                        {product.productViews} views
+                                                    </Typography>
                                                 </div>
+
                                                 <div className={"product-stock"}>In Stock</div>
                                                 <Button
                                                     className={"buy-btn"}
@@ -220,7 +226,7 @@ export default function Products(props: ProductsProps) {
                                                         })
                                                         e.stopPropagation();
                                                     }}>
-                                                    Add to Cart
+                                                    Add to Basket
                                                 </Button>
                                             </Box>
                                         </Stack>

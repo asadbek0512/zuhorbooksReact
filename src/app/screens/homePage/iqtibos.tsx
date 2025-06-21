@@ -17,11 +17,32 @@ const quotes = [
         quote: "Success is getting what you want. Happiness is wanting what you get.",
         author: "Dale Carnegie"
     },
+    // {
+    //     image: '/img/tayson.jpg',
+    //     quote: "'Suv kabi bo'l, suvdi piyolaga quysa piyola  bo'p qol, chaynikka quysa chaynik bo'p qol'",
+    //     author: "O'zbek tayson"
+    // },
     {
-        image: '/img/tayson.jpg',
-        quote: "'Suv kabi bo'l, suvdi piyolaga quysa piyola  bo'p qol, chaynikka quysa chaynik bo'p qol'",
-        author: "O'zbek tayson"
+        image: '/img/james-clear.webp',
+        quote: "Learn by asking what you don't know — if you don’t ask, you’ll remain ignorant.",
+        author: "James Clear"
     },
+    {
+        image: "/img/Alisher.jpg",
+        quote: "Learn by asking what you don't know — if you don’t ask, you’ll remain ignorant.",
+        author: "Alisher Navoiy"
+    },
+    {
+        image: "/img/Cholpon.jpeg",
+        quote: "The most precious thing in the world is free thought, the ability to choose the right path. No one should follow the thoughts of others, but follow their own heart.",
+        author: "Cho‘lpon"
+    },
+    {
+        image: "/img/Abdulaziz77.jpg",
+        quote: "A smooth sea never made a skilled sailor..",
+        author: "Abdulaziz Ibrokhimov"
+    }
+    
 ];
 
 export default function Iqtibos() {

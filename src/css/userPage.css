@@ -2,7 +2,7 @@
 	width: 100%;
 	height: auto;
 	display: flex;
-	background: #f8f8ff;
+	background: #F3F2EC;
 }
 
 .user-page .css-heg063-MuiTabs-flexContainer {
@@ -70,34 +70,36 @@
 	flex-direction: column;
 }
 
+/* Right section styling */
 .my-page-frame .my-page-right {
 	margin-left: 30px;
 	width: 30%;
-	height: auto;
-	display: flex;
-	flex-direction: column;
-}
-
-.user-page .order-info-box {
-	position: relative;
-	padding: 20px;
-	width: 100%;
-	height: auto;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	background: #f6f2ff;
-	box-shadow: 15px 14px 4px rgba(0, 0, 0, 0.25), inset -1px 0px 16px 13px rgb(24 23 112 / 20%);
-	border-radius: 16px;
+	padding-top: 20px;
 }
 
-.user-page .order-info-box .settings-btn {
-	position: absolute;
-	top: 6%;
-	right: 19%;
-	cursor: pointer;
+/* Order info box styling */
+.user-page .order-info-box {
+	position: relative;
+	padding: 25px;
+	width: 100%;
+	background: #EDEBE4;
+	border-radius: 18px;
+	box-shadow: 12px 12px 20px rgba(0, 0, 0, 0.15), inset -1px 0px 16px 8px rgba(24, 23, 112, 0.15);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	transition: all 0.3s ease;
 }
 
+.user-page .order-info-box:hover {
+	box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.1), inset -2px 0px 20px 10px rgba(24, 23, 112, 0.2);
+	transform: translateY(-1px);
+}
+
+/* User Image Styling */
 .user-page .order-info-box .order-user-img {
 	position: relative;
 	display: flex;
@@ -105,234 +107,279 @@
 	align-items: center;
 }
 
+/* Avatar image */
 .user-page .order-info-box .order-user-img .order-user-avatar {
-	width: 150px;
-	height: 150px;
-	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-	border-radius: 37px;
+	width: 160px;
+	height: 160px;
+	border-radius: 50%;
+	filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.3));
+	object-fit: cover;
+	border: 3px solid #fff;
+	margin-bottom: 15px;
 }
 
+/* Icon box styling */
 .user-page .order-info-box .order-user-icon-box {
 	position: absolute;
-	padding: 5px;
-	width: 37px;
-	height: 37px;
-	top: 81%;
-	right: 0;
+	padding: 8px;
+	width: 42px;
+	height: 42px;
+	top: 80%;
+	right: 2%;
+	background: rgba(209, 209, 209, 0.4);
 	display: flex;
-	background: rgb(209 209 209 / 33%);
-	border-radius: 37px;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+	box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .user-page .order-info-box .order-user-name {
-	margin-top: 10px;
-	font-family: 'Commissioner';
-	font-style: normal;
-	font-weight: 500;
-	font-size: 28px;
-	line-height: 36px;
+	margin-top: 15px;
+	font-family: 'Commissioner', sans-serif;
+	font-weight: 600;
+	font-size: 32px;
 	color: #08090d;
+	text-align: center;
 }
 
 .user-page .order-info-box .order-user-prof {
-	font-family: 'Commissioner';
-	font-style: normal;
+	font-family: 'Commissioner', sans-serif;
 	font-weight: 500;
-	font-size: 20px;
-	line-height: 36px;
+	font-size: 18px;
 	color: #a1a1a1;
+	margin-top: 5px;
 }
 
 .user-page .order-info-box .user-media-box {
-	margin-top: 10px;
-	width: 60%;
+	margin-top: 15px;
+	width: 65%;
 	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
+	justify-content: space-around;
+	align-items: center;
 }
 
 .user-page .order-info-box .user-desc {
-	margin-top: 30px;
+	margin-top: 25px;
 	width: 90%;
-	display: flex;
-	justify-content: center;
-	font-family: 'DM Sans';
-	font-style: normal;
+	font-family: 'DM Sans', sans-serif;
 	font-weight: 400;
 	font-size: 16px;
 	line-height: 24px;
 	color: #616164;
+	text-align: center;
+	padding-bottom: 15px;
 }
 
+.user-page .order-info-box .user-media-box svg {
+	font-size: 28px;
+	color: #444444;
+	transition: color 0.3s ease;
+}
+
+.user-page .order-info-box .user-media-box svg:hover {
+	color: #5c6bc0;
+	/* Change color on hover */
+}
+
+/* Button styling (if exists) */
 .user-page .order-info-box .css-1e3kzd4-MuiButtonBase-root-MuiButton-root {
-	margin-top: 15px;
-	min-width: 90%;
+	margin-top: 20px;
+	min-width: 85%;
 	height: 44px;
 	text-transform: capitalize;
-	font-style: normal;
 	font-weight: 600;
 	font-size: 25px;
-	line-height: 38px;
 	color: #f8f8ff;
+	background: #969696;
+	border-radius: 25px;
+	transition: background 0.3s ease;
 }
 
-.user-page .menu-box img {
-	width: 25px;
+.user-page .order-info-box .css-1e3kzd4-MuiButtonBase-root-MuiButton-root:hover {
+	background: #b9b9b9;
 }
 
-.user-page .menu-box span {
-	margin-left: 30px;
-	font-family: 'Poppins';
-	font-style: normal;
-	font-weight: 600;
-	font-size: 25px;
-	line-height: 38px;
-	color: #000000;
-}
 
 .user-page .settings {
 	width: 95%;
-	height: auto;
 	display: flex;
 	flex-direction: column;
+	gap: 24px;
+	padding: 24px;
+	background:#EDEBE4;
+	border-radius: 30px;
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+	margin-top: -30px;
+	margin-left: -50px;
 }
 
 .user-page .settings .input-frame {
-	width: 100%;
-	height: auto;
 	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 20px;
+}
+
+.user-page .settings .short-input,
+.user-page .settings .long-input {
+	flex: 1 1 100%;
+	display: flex;
+	flex-direction: column;
 }
 
 .user-page .settings .short-input {
-	width: 49%;
-	height: auto;
-	display: flex;
-	flex-direction: column;
-}
-
-.user-page .settings .long-input {
-	width: 100%;
-	height: auto;
-	display: flex;
-	flex-direction: column;
+	flex: 1 1 48%;
 }
 
 .user-page .settings .spec-label {
-	font-family: 'Source Serif Pro';
-	font-style: normal;
-	font-weight: 400;
-	font-size: 16px;
-	line-height: 25px;
-	color: #f8f8ff;
+	font-size: 15px;
+	color: #555;
+	margin-bottom: 6px;
+	font-weight: 500;
+	font-family: 'Poppins', sans-serif;
 }
 
-.user-page .settings .spec-input {
-	position: relative;
-	margin-top: 10px;
-	padding-left: 20px;
-	width: 100%;
-	height: 54px;
-	border: none;
-	background: #f7f7f7;
-	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-	border-radius: 5px;
-	font-family: 'GT Walsheim Pro';
-	font-style: normal;
-	font-weight: 400;
+.user-page .settings .spec-input,
+.user-page .settings .spec-textarea {
+	padding: 14px 18px;
+	border: 1px solid #ddd;
+	border-radius: 12px;
 	font-size: 15px;
-	line-height: 26px;
-	color: #4f547b;
+	font-family: 'Poppins', sans-serif;
+	color: #333;
+	background-color: #F3F2EC;
+	transition: border 0.3s, box-shadow 0.3s;
+}
+
+.user-page .settings .spec-input:focus,
+.user-page .settings .spec-textarea:focus {
+	outline: none;
+	border-color: #7aa0f8;
+	box-shadow: 0 0 0 3px rgba(122, 160, 248, 0.2);
 }
 
 .user-page .settings .spec-textarea {
-	position: relative;
-	margin-top: 10px;
-	padding: 20px;
-	width: 100%;
-	height: 200px;
-	border: none;
-	background: #f7f7f7;
-	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-	border-radius: 5px;
-	font-family: 'GT Walsheim Pro';
-	font-style: normal;
-	font-weight: 400;
-	font-size: 15px;
-	line-height: 26px;
-	color: #4f547b;
+	min-height: 160px;
+	resize: vertical;
 }
 
 .user-page .settings .member-media-frame {
-	margin-top: 25px;
-	position: relative;
-	padding: 10px;
-	width: 100%;
-	height: auto;
 	display: flex;
-	border-radius: 5px;
+	align-items: center;
+	gap: 20px;
 }
 
-.user-page .settings .member-media-frame .mb-image {
+
+.user-page .settings .mb-image {
 	width: 100px;
 	height: 100px;
+	overflow: hidden;
 	border-radius: 50%;
-}
-
-.user-page .settings .media-change-box {
-	position: relative;
-	margin-left: 20px;
-	width: auto;
-	height: 100%;
-	display: flex;
-	flex-direction: column;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+	transition: transform 0.3s ease-in-out;
+	cursor: pointer;
+	border: 3px solid #cfcd5c;
+	box-shadow: 0 0 8px rgba(19, 29, 19, 0.5);
 }
 
 .user-page .settings .media-change-box span {
-	font-family: 'GT Walsheim Pro';
-	font-style: normal;
-	font-weight: 400;
-	font-size: 16px;
-	line-height: 18px;
-	color: #140342;
+	font-weight: 600;
+	color: #333;
 }
 
 .user-page .settings .media-change-box p {
-	margin: 10px 0px 14px 0px;
-	font-family: 'GT Walsheim Pro';
-	font-style: normal;
-	font-weight: 400;
-	font-size: 14px;
-	line-height: 16px;
-	color: #4f547b;
+	font-size: 13px;
+	color: #777;
+	margin-top: 4px;
 }
 
 .user-page .settings .up-del-box {
-	position: relative;
-	width: 37px;
-	height: 37px;
-	display: flex;
-	background: #cbcbcb;
-	border-radius: 8px;
-	justify-content: center;
-	align-items: center;
+	margin-top: 10px;
 }
 
-.user-page .settings .up-del-box input {
-	position: absolute;
-	width: 20px;
-	height: 16px;
-	padding: 0;
-	background: red;
-	margin: -1px;
-	overflow: hidden;
-	clip: rect(0, 0, 0, 0);
-	border: 0;
+.user-page .settings .up-del-box button {
+	background-color: #e0e7ff;
+	color: #3b4cca;
+	border-radius: 10px;
+	padding: 6px 12px;
+	font-weight: 500;
+	transition: 0.3s;
+}
+
+.user-page .settings .up-del-box button:hover {
+	background-color: #c7d2fe;
 }
 
 .user-page .settings .save-box {
 	display: flex;
 	justify-content: flex-end;
-	margin-top: 25px;
+	margin-top: 16px;
+}
+
+.user-page .settings .save-box button {
+	background: linear-gradient(135deg, #7b7b7b, #828282);
+	color: #fff;
+	padding: 12px 28px;
+	font-size: 15px;
+	border-radius: 10px;
+	font-weight: 600;
+	box-shadow: 0 6px 16px rgba(59, 130, 246, 0.25);
+	transition: background 0.3s;
+}
+
+.user-page .settings .save-box button:hover {
+	background: linear-gradient(135deg, #5e5e5e, #636363);
+}
+
+.input-with-icon {
+	position: relative;
+}
+
+.input-with-icon input,
+.input-with-icon textarea {
+	padding-left: 50px;
+	/* Ikonka uchun joy */
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.input-with-icon .input-icon {
+	position: absolute;
+	top: 50%;
+	left: 10px;
+	transform: translateY(-50%);
+	color: #888;
+	font-size: 20px;
+	pointer-events: none;
+}
+
+.spec-label {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	/* Icon va matn orasidagi masofa */
+	font-weight: 600;
+	margin-bottom: 6px;
+}
+
+.input-with-icon {
+	position: relative;
+}
+
+.input-with-icon input,
+.input-with-icon textarea {
+	padding-left: 50px;
+	/* Chap tarafdagi input ichidagi icon uchun */
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.input-with-icon .input-icon {
+	position: absolute;
+	top: 50%;
+	left: 10px;
+	transform: translateY(-50%);
+	color: #888;
+	font-size: 20px;
+	pointer-events: none;
 }

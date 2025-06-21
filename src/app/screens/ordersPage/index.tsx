@@ -18,6 +18,10 @@ import "../../../css/order.css"
 import { useHistory } from "react-router-dom";
 import { serverApi } from "../../../lib/config";
 import { MemberType } from "../../../lib/enums/member.enum";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import TelegramIcon from "@mui/icons-material/Telegram";
+import YouTubeIcon from "@mui/icons-material/YouTube";
 
 /** REDUX SLICE & SELECTOR **/
 const actionDispatch = (dispatch: Dispatch) => ({
@@ -65,6 +69,45 @@ export default function OrdersPage() {
   return (
     <div className={"order-page"}>
       <Container className={"order-container"}>
+      <Stack className={"order-right"}>
+          <Box className={"profile-header"}>
+            <div className={"profile-img-container"}>
+              <img
+                src={
+                  authMember?.memberImage
+                    ? `${serverApi}/${authMember.memberImage}`
+                    : "/icons/default-user.svg"
+                }
+                alt="User Avatar"
+                className="profile-avatar"
+              />
+            </div>
+            <div className="profile-details">
+              <span className="profile-name">{authMember?.memberNick}</span>
+              <span className="profile-type">{authMember?.memberType}</span>
+            </div>
+          </Box>
+
+          <Box className={"profile-info"}>
+            <div className="profile-address">
+              <LocationOnIcon />
+              <span>
+                {authMember?.memberAddress ? authMember.memberAddress : "No address available"}
+              </span>
+            </div>
+          </Box>
+
+          <Box className={"profile-social-links"}>
+            <div className="social-icons">
+              <YouTubeIcon onClick={() => window.open("https://youtube.com", "_blank")} />
+              <InstagramIcon onClick={() => window.open("https://instagram.com", "_blank")} />
+              <FacebookIcon onClick={() => window.open("https://facebook.com", "_blank")} />
+              <TelegramIcon onClick={() => window.open("https://t.me/+mFPoMiYbzz01YzRi", "_blank")}
+              />
+            </div>
+          </Box>
+        </Stack>
+
         <Stack className={"order-left"}>
           <TabContext value={value}>
             <Box className={"order-nav-frame"}>
@@ -90,83 +133,9 @@ export default function OrdersPage() {
         </Stack>
 
 
-        <Stack className={"order-right"}>
-          <Box className={"order-info-box"}>
-            <Box className={"member-box"}>
-             <div className={"order-user-img"}>
-              <img
-                  src={authMember?.memberImage
-                    ? `${serverApi}/${authMember.memberImage}`
-                    : "/icons/default-user.svg"}
-                  className={"order-user-avatar"}
-                /> 
-                <div className={"order-user-icon-box"}>
-                  <img
-                    src={authMember?.memberType === MemberType.RESTAURANT
-                      ? "/icons/restaurant.svg"
-                      : "/icons/user-badge.svg"}
-                    className={"order-user-prof-img"}
-                  />
-                </div>
-              </div>
-              <span className={"order-user-name"}>
-                {" "}
-                {authMember?.memberNick}
-              </span>
-              <span className={"order-user-prof"}> {authMember?.memberType} </span>
-            </Box>
-            <Box className={"liner"}></Box>
-            <Box className={"order-user-address"}>
-              <div style={{ display: "flex" }}>
-                <LocationOnIcon />
-              </div>
-              <div className={"spec-address-txt"}> {authMember?.memberAddress
-                ? authMember.memberAddress
-                : "Do not exist"}
-              </div>
-            </Box>
-          </Box>
-          <Box className={"order-info-box"} sx={{ margintop: "15px" }}>
-            <input
-              type={"text"}
-              name={"cardNumber"}
-              placeholder={"Card number : 54454151551"}
-              className={"card-input"}
-            />
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "space-between",
-              }}
-            >
-              <input
-                type={"text"}
-                name={"cardPeriod"}
-                placeholder={"07 / 24"}
-                className={"card-half-input"}
-              />
-              <input
-                type={"text"}
-                name={"cardCVV"}
-                placeholder={"CVV : 010"}
-                className={"card-half-input"}
-              />
-            </div>
-            <input
-              type={"text"}
-              name={"cardCreator"}
-              placeholder={"Justin Robertson"}
-              className={"card-input"}
-            />
-            <div className={"cards-box"}>
-              <img src={"/icons/western-card.svg"} />
-              <img src={"/icons/master-card.svg"} />
-              <img src={"/icons/paypal-card.svg"} />
-              <img src={"/icons/visa-card.svg"} />
-            </div>
-          </Box>
-        </Stack>
+   
+
+
       </Container>
     </div>
   )

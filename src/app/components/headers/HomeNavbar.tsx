@@ -180,6 +180,7 @@ export default function HomeNavbar(props: HomeNavbar) {
                         <div className={"logo-img"}></div>
                     </Box>
                 </Stack>
+
             </Container>
         </div>
     );

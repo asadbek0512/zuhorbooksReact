@@ -17,7 +17,7 @@
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
-    margin-right: 50px;
+    margin-right: -40px;
 }
 
 .home-navbar .navbar-container .menu {
@@ -116,10 +116,13 @@
     font-size: 53px;
     font-style: normal;
     font-weight: 400;
-    line-height: 145%; /* 105.85px */
+    line-height: 145%;
+    /* 105.85px */
     letter-spacing: -1.46px;
     text-transform: capitalize;
 }
+
+
 
 .home-navbar .navbar-container .header-frame .detail .wel-txt {
     color: #7A7A7A;
@@ -130,7 +133,8 @@
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
-    line-height: 220%; /* 35.2px */
+    line-height: 220%;
+    /* 35.2px */
     letter-spacing: 0.64px;
 }
 
@@ -156,7 +160,7 @@
 }
 
 .home-navbar .navbar-container .detail .signup .signup-button {
-      width: 210px;
+    width: 210px;
     height: 60px;
     border-radius: 4px;
     background: #cdcdcd;
@@ -180,7 +184,7 @@
     width: 100%;
     height: 100%;
     margin-top: -70px;
-    margin-left: 150px;
+    margin-left: 350px;
     background: url("/public/img/Quron2.jpg");
     background-size: contain;
     background-repeat: no-repeat;
@@ -293,7 +297,7 @@
     height: auto;
     display: flex;
     flex-direction: column;
-    background: #f8f8ff;
+    background: #F3F2EC;
     border-radius: 16px;
 }
 
@@ -304,7 +308,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    background: #d7b586;
+    background: hsl(0, 0%, 68%);
     border-width: 1px 0px;
     border-style: solid;
     border-color: #343434;
@@ -318,6 +322,9 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    background: #eae5d6;
+    border-radius: 25px;
+
 }
 
 .basket-info-box .product-img {
@@ -345,7 +352,8 @@
     font-weight: 600;
     font-size: 15px;
     line-height: 22px;
-    color: #ae0000;
+    color: #383838;
+
 }
 
 .basket-info-box .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input {
@@ -416,4 +424,13 @@
     height: 260px;
     display: flex;
     flex-direction: column;
+}
+
+.basket-frame .order-button {
+    background: #7b7b7b;
+    color: #fff;
+}
+
+.basket-frame .order-button:hover {
+    background: #5b5b5b;
 }

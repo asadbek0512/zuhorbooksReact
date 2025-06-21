@@ -33,7 +33,7 @@ export default function HomePage() {
                 page: 1,
                 limit: 1,
                 order: "productViews",
-                productCollection: ProductCollection.DISH,
+                productCollection: ProductCollection.RELIGIOUS,
             })
             .then((data) => setPopularDishes(data))
             .catch((err) => console.log(err));

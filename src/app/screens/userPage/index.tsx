@@ -21,7 +21,7 @@ export default function UserPage() {
         <Stack className={"my-page-frame"}>
           <Stack className={"my-page-left"}>
             <Box display={"flex"} flexDirection={"column"}>
-              <Box className={"menu-name"}>Modify Member Details</Box>
+              <Box className={"menu-name"}></Box>
               <Box className={"menu-content"}>
                 <Settings />
               </Box>
@@ -64,7 +64,11 @@ export default function UserPage() {
               <Box className={"user-media-box"}>
                 <FacebookIcon />
                 <InstagramIcon />
-                <TelegramIcon />
+                <TelegramIcon
+                  onClick={() => window.open("https://t.me/+mFPoMiYbzz01YzRi", "_blank")}
+                  style={{ cursor: 'pointer' }}
+                />
+
                 <YouTubeIcon />
               </Box>
               <p className={"user-desc"}>
