@@ -383,3 +383,130 @@
 	font-size: 20px;
 	pointer-events: none;
 }
+
+.user-logout-btn {
+	margin-top: 16px !important;
+	width: 85% !important;
+	background: #828282 !important;
+	color: #fff !important;
+	border-radius: 25px !important;
+	text-transform: none !important;
+	font-size: 15px !important;
+	font-weight: 600 !important;
+	padding: 10px 0 !important;
+	box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
+	transition: background 0.2s !important;
+}
+
+.user-logout-btn:hover {
+	background: #5e5e5e !important;
+}
+
+/* ============================================================
+   RESPONSIVE — USER PAGE
+   ============================================================ */
+
+@media (max-width: 900px) {
+  /* ---- Asosiy layout ---- */
+  .user-page .my-page-frame {
+    flex-direction: column !important;
+    padding: 12px 0 24px !important;
+    gap: 16px !important;
+  }
+  .my-page-frame .my-page-left {
+    width: 100% !important;
+    order: 1 !important;
+  }
+  .my-page-frame .my-page-right {
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    order: 2 !important;
+  }
+
+  /* ---- Profil kartasi ---- */
+  .user-page .order-info-box {
+    padding: 20px 16px !important;
+    border-radius: 16px !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 0 !important;
+  }
+  .user-page .order-info-box .order-user-avatar {
+    width: 90px !important;
+    height: 90px !important;
+    margin-bottom: 10px !important;
+  }
+  .user-page .order-info-box .order-user-icon-box {
+    top: 75% !important;
+    width: 30px !important;
+    height: 30px !important;
+    padding: 5px !important;
+  }
+  .user-page .order-info-box .order-user-name {
+    font-size: 20px !important;
+    margin-top: 4px !important;
+  }
+  .user-page .order-info-box .order-user-prof {
+    font-size: 13px !important;
+    margin-top: 4px !important;
+  }
+  .user-page .order-info-box .user-media-box {
+    width: 80% !important;
+    margin-top: 12px !important;
+    justify-content: space-around !important;
+  }
+  .user-page .order-info-box .user-media-box svg {
+    font-size: 22px !important;
+  }
+  .user-page .order-info-box .user-desc {
+    font-size: 13px !important;
+    margin-top: 12px !important;
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  /* ---- Settings form ---- */
+  .user-page .settings {
+    margin-left: 0 !important;
+    width: 100% !important;
+    padding: 16px !important;
+    border-radius: 16px !important;
+    margin-top: 0 !important;
+    gap: 14px !important;
+  }
+  .user-page .settings .member-media-frame {
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 14px !important;
+  }
+  .user-page .settings .mb-image {
+    width: 72px !important;
+    height: 72px !important;
+    flex-shrink: 0 !important;
+  }
+  .user-page .settings .input-frame {
+    gap: 12px !important;
+  }
+  .user-page .settings .short-input {
+    flex: 1 1 100% !important;
+  }
+  .user-page .settings .spec-input {
+    font-size: 14px !important;
+    padding: 10px 14px !important;
+  }
+  .user-page .settings .spec-textarea {
+    font-size: 14px !important;
+    padding: 10px 14px !important;
+    min-height: 100px !important;
+  }
+  .user-page .settings .save-box {
+    justify-content: stretch !important;
+  }
+  .user-page .settings .save-box button {
+    width: 100% !important;
+    padding: 12px !important;
+    font-size: 15px !important;
+  }
+}

@@ -257,7 +257,7 @@
   }
 }
 
-/* POPULAR DISHES */
+/* POPULAR DISHES (Desktop) */
 
 .homepage .best-seller-section {
   width: 100%;
@@ -711,4 +711,232 @@
 .homepage .events-frame .swiper-pagination-bullet-active {
   background: #343434;
   border-radius: 50%;
+}
+
+
+/* ============================================================
+   RESPONSIVE — HOMEPAGE  (≤ 900px tablet/mobile,  ≤ 480px kichik mobil)
+   ESLATMA: desktop layout O'ZGARMAYDI — faqat mobil ekranlarda ishlaydi
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+  /* ---- STATISTICS ---- */
+  .homepage .static-frame {
+    height: auto !important;
+    padding: 24px 0 !important;
+  }
+  .homepage .static-frame .info {
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 16px !important;
+    height: auto !important;
+  }
+  .homepage .static-frame .info .static-box {
+    width: 130px !important;
+    height: auto !important;
+  }
+  .homepage .static-frame .info .static-box .static-num {
+    font-size: 36px !important;
+    line-height: 50px !important;
+  }
+  .homepage .static-frame .info .static-box .static-text {
+    font-size: 12px !important;
+  }
+
+  /* ---- NEW BOOKS ---- */
+  .homepage .new-products-frame {
+    padding: 12px !important;
+    min-height: unset !important;
+  }
+  .homepage .new-products-frame .cards-frame {
+    padding: 15px 0 !important;
+  }
+  .homepage .new-products-frame .custom-card {
+    width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    border: 1px solid #e0e0e0 !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05) !important;
+    background: #fff !important;
+    border-radius: 12px !important;
+  }
+
+  /* ---- POPULAR (best-seller) ---- */
+  .homepage .best-seller-section {
+    padding: 12px !important;
+    min-height: unset !important;
+  }
+  .homepage .best-seller-section .best-seller-card {
+    display: flex !important;
+    flex-direction: column !important;
+    background: #f3f2ec !important;
+    border-radius: 20px !important;
+    padding: 20px !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05) !important;
+    margin-bottom: 20px !important;
+  }
+  .homepage .best-seller-section .best-seller-card .product-image {
+    width: auto !important;
+    padding: 0 !important;
+  }
+  .homepage .best-seller-section .best-seller-card .product-info {
+    width: auto !important;
+    padding: 0 !important;
+  }
+  .homepage .best-seller-section .best-seller-card .section-title {
+    font-size: 20px !important;
+    margin-bottom: 10px !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  /* ---- ACTIVE USERS ---- */
+  .homepage .active-users-frame {
+    width: 100% !important;
+    height: auto !important;
+    padding-bottom: 40px !important;
+  }
+  .homepage .active-users-frame .main {
+    margin-top: 40px !important;
+  }
+  .homepage .cards-frame {
+    overflow-x: auto !important;
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+    gap: 20px !important;
+    padding-bottom: 12px !important;
+    scrollbar-width: none !important;
+  }
+  .homepage .cards-frame::-webkit-scrollbar {
+    display: none !important;
+  }
+  .homepage .cards-frame .card {
+    width: 150px !important;
+    height: 150px !important;
+    min-width: 150px !important;
+    border-radius: 50% !important;
+    border: 3px solid #fffc9f !important;
+    box-shadow: 0 0 8px rgba(19, 29, 19, 0.5) !important;
+    background: transparent !important;
+    transform: none !important;
+    margin: 0 !important;
+  }
+  .homepage .cards-frame .card img {
+    width: 140px !important;
+    height: 140px !important;
+    object-fit: cover !important;
+    border-radius: 50% !important;
+  }
+  .homepage .cards-frame .member-nickname {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    margin-top: 8px !important;
+    font-size: 14px !important;
+  }
+
+  /* ---- EVENTS ---- */
+  .homepage .events-frame {
+    height: auto !important;
+    padding-bottom: 48px !important;
+  }
+  .homepage .events-frame .events-info-frame {
+    width: 80vw !important;
+  }
+  .homepage .events-frame .events-img {
+    height: 260px !important;
+  }
+  .homepage .events-frame .events-desc {
+    padding: 8px 10px !important;
+    gap: 6px !important;
+    bottom: 8px !important;
+    border-radius: 14px !important;
+  }
+  .homepage .events-frame .events-desc .event-title-speaker strong {
+    font-size: 13px !important;
+  }
+  .homepage .events-frame .text-desc {
+    font-size: 11px !important;
+    line-height: 17px !important;
+  }
+  .homepage .events-frame .bott-info {
+    flex-wrap: wrap !important;
+    gap: 4px !important;
+    font-size: 11px !important;
+  }
+  .homepage .events-frame .bott-info .bott-info-main img {
+    margin-right: 4px !important;
+    width: 14px !important;
+  }
+
+  /* ---- IQTIBOS ---- */
+  .homepage .quote-section {
+    height: 180px !important;
+  }
+  .homepage .quote-box {
+    max-width: 260px !important;
+    padding: 10px 12px !important;
+    height: 120px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .homepage .quote-text {
+    font-size: 11px !important;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .homepage .quote-avatar {
+    width: 50px !important;
+    height: 50px !important;
+  }
+
+  /* ---- ADVERTISEMENT ---- */
+  .homepage .ads-restaurant-frame {
+    height: auto !important;
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+    box-shadow: 0 -6px 12px 4px #34343460, 0 6px 12px 4px #34343460 !important;
+  }
+  .homepage .ads-restaurant-frame .ads-video {
+    transform: scale(1) !important;
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    object-fit: contain !important;
+  }
+
+  /* ---- CATEGORY TITLES ---- */
+  .homepage .new-products-frame .category-title,
+  .homepage .active-users-frame .category-title,
+  .homepage .events-frame .category-title {
+    font-size: 26px !important;
+    line-height: 34px !important;
+  }
+}
+
+/* ---- KICHIK MOBIL (≤ 480px) ---- */
+@media (max-width: 480px) {
+  .homepage .new-products-frame .custom-card {
+    width: 100% !important;
+  }
+  .homepage .cards-frame .card {
+    width: 110px !important;
+    height: 110px !important;
+    min-width: 110px !important;
+  }
+  .homepage .cards-frame .card img {
+    width: 100px !important;
+    height: 100px !important;
+  }
+  .homepage .cards-frame .member-nickname {
+    font-size: 12px !important;
+    padding: 4px 8px !important;
+  }
 }

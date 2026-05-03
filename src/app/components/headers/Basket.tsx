@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Button, Stack } from "@mui/material";
+import { Box, Button, Stack, useMediaQuery } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 import Badge from "@mui/material/Badge";
 import Menu from "@mui/material/Menu";
@@ -25,6 +25,7 @@ export default function Basket(props: BasketProps) {
   const { cartItems, onAdd, onRemove, onDelete, onDeleteAll } = props;
   const { authMember, setOrderBuilder } = useGlobals();
   const history = useHistory();
+  const isMobile = useMediaQuery("(max-width: 600px)");
   const itemsPrice: number = cartItems.reduce(
     (a: number, c: CartItem) => a + c.quantity * c.price,
     0
@@ -86,13 +87,14 @@ export default function Basket(props: BasketProps) {
             overflow: "visible",
             filter: "drop-shadow(0px 2px 8px rgba(0,0,0,0.32))",
             mt: 1.5,
-            borderRadius: "25px", // <-- bu yerga qo‘shildi
-            "& .MuiAvatar-root": {
-              width: 32,
-              height: 32,
-              ml: -0.5,
-              mr: 1,
-            },
+            borderRadius: "20px",
+            ...(isMobile && {
+              width: "92vw",
+              maxWidth: "92vw",
+              left: "4vw !important",
+              right: "4vw !important",
+            }),
+            "& .MuiAvatar-root": { width: 32, height: 32, ml: -0.5, mr: 1 },
             "&:before": {
               content: '""',
               display: "block",

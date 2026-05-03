@@ -607,3 +607,139 @@
     color: #333;
   }
   
+
+/* ============================================================
+   RESPONSIVE — PRODUCTS PAGE
+   ============================================================ */
+
+@media (max-width: 900px) {
+  .products-page .products .top-text {
+    flex-direction: column !important;
+    height: auto !important;
+    margin-top: 24px !important;
+    align-items: center !important;
+    gap: 12px;
+  }
+  .products-page .products .top-text p {
+    margin-left: 0 !important;
+    font-size: 26px !important;
+    text-align: center;
+  }
+  .products-page .dishes-filter-section {
+    padding-left: 0 !important;
+    justify-content: center !important;
+    padding: 0 8px !important;
+  }
+  .products-page .dishes-filter-box {
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+  }
+  /* Kategoriyalar — gorizontal scroll */
+  .products-page .product-category {
+    width: 100% !important;
+    overflow: hidden !important;
+  }
+  .products-page .product-category .category-main {
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    gap: 8px !important;
+    padding: 10px 12px !important;
+    justify-content: flex-start !important;
+    border-radius: 12px !important;
+    scrollbar-width: none !important;
+  }
+  .products-page .product-category .category-main::-webkit-scrollbar {
+    display: none !important;
+  }
+  .products-page .product-category .category-label {
+    font-size: 13px !important;
+    padding: 7px 12px !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+    border-radius: 10px !important;
+  }
+
+  /* Kartochkalar — 2 ustun */
+  .products-page .products .product-wrapper {
+    justify-content: center !important;
+  }
+  .products-page .products .product-card {
+    width: calc(50% - 16px) !important;
+    margin: 8px 6px !important;
+  }
+  .products-page .products .product-card .product-img {
+    height: 160px !important;
+  }
+  .products-page .products .product-info {
+    padding: 10px !important;
+    gap: 4px !important;
+  }
+  .products-page .products .product-info .product-title {
+    font-size: 13px !important;
+    line-height: 1.3 !important;
+  }
+  .products-page .products .product-price {
+    font-size: 13px !important;
+  }
+  .products-page .products .views {
+    font-size: 11px !important;
+    margin-left: 0 !important;
+  }
+  .products-page .products .buy-btn,
+  .products-page .products .add-to-cart-btn {
+    font-size: 12px !important;
+    padding: 7px 10px !important;
+  }
+  .products-page .list-category-section {
+    padding: 8px !important;
+    margin-top: 0 !important;
+    gap: 8px !important;
+  }
+  .products-page .chosen-product .info-box .product-name {
+    font-size: 20px !important;
+  }
+  .products-page .chosen-product .info-box .resto-name {
+    font-size: 14px !important;
+    margin-top: 8px !important;
+  }
+  .products-page .chosen-product .product-desc {
+    font-size: 14px !important;
+  }
+  .products-page .chosen-product .product-price {
+    font-size: 18px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .products-page .products .product-card {
+    width: calc(50% - 12px) !important;
+    margin: 6px 4px !important;
+  }
+  .products-page .products .product-card .product-img {
+    height: 130px !important;
+  }
+  .products-page .product-category .category-label {
+    font-size: 11px !important;
+    padding: 6px 10px !important;
+  }
+}
+
+/* ---- ChosenProduct ---- */
+@media (max-width: 900px) {
+  .products-page .chosen-product {
+    padding: 30px 12px !important;
+  }
+  .products-page .chosen-product .product-container {
+    flex-direction: column !important;
+    gap: 16px !important;
+    margin-top: 20px !important;
+  }
+  .products-page .chosen-product .chosen-product-slider,
+  .products-page .chosen-product .chosen-product-info {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: unset !important;
+    height: auto !important;
+    min-height: 300px;
+  }
+}

@@ -1,14 +1,18 @@
-import { Box, Stack } from "@mui/material";
+import { Box, Stack, useMediaQuery } from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Autoplay, Navigation, Pagination } from "swiper";
 import { plans } from "../../../lib/data/plans";
 
 SwiperCore.use([Autoplay, Navigation, Pagination]);
 
-
 export default function Events() {
+  const isMobile = useMediaQuery("(max-width: 900px)");
+
   return (
-    <div className={"events-frame"}>
+    <div
+      className={"events-frame"}
+      style={isMobile ? { height: "auto", paddingBottom: "48px" } : undefined}
+    >
       <Stack className={"events-main"}>
         <Box className={"events-text"}>
           <span className={"category-title"}>Events</span>
@@ -16,9 +20,10 @@ export default function Events() {
 
         <Swiper
           className={"events-info swiper-wrapper"}
-          slidesPerView={"auto"}
-          centeredSlides={true}
-          spaceBetween={30}
+          slidesPerView={isMobile ? 1.15 : "auto"}
+          centeredSlides={!isMobile}
+          spaceBetween={isMobile ? 16 : 30}
+          style={isMobile ? { paddingLeft: "16px", paddingRight: "16px" } : undefined}
           navigation={{
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
@@ -34,9 +39,16 @@ export default function Events() {
         >
           {plans.map((value, number) => {
             return (
-              <SwiperSlide key={number} className={"events-info-frame"}>
+              <SwiperSlide
+                key={number}
+                className={"events-info-frame"}
+              >
                 <div className={"events-img"}>
-                  <img src={value.img} className={"events-img"} />
+                  <img
+                    src={value.img}
+                    className={"events-img"}
+                    style={isMobile ? { height: "180px", objectFit: "cover", borderRadius: "20px" } : undefined}
+                  />
                 </div>
                 <Box className={"events-desc"}>
                   <Box className={"events-bott"}>

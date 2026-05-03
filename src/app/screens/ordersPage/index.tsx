@@ -23,6 +23,8 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import TelegramIcon from "@mui/icons-material/Telegram";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 
+const LIMIT = 4;
+
 /** REDUX SLICE & SELECTOR **/
 const actionDispatch = (dispatch: Dispatch) => ({
   setPausedOrders: (data: Order[]) => dispatch(setPausedOrders(data)),
@@ -36,30 +38,47 @@ export default function OrdersPage() {
   const { orderBuilder, authMember } = useGlobals();
   const history = useHistory();
   const [value, setValue] = useState("1");
-  const [orderInquiry, setOrderInquiry] = useState<OrderInquiry>({
-    page: 1,
-    limit: 5,
-    orderStatus: OrderStatus.PAUSE,
-  });
+
+  const [pausedPage, setPausedPage] = useState(1);
+  const [processPage, setProcessPage] = useState(1);
+  const [finishedPage, setFinishedPage] = useState(1);
+
+  const [pausedHasMore, setPausedHasMore] = useState(false);
+  const [processHasMore, setProcessHasMore] = useState(false);
+  const [finishedHasMore, setFinishedHasMore] = useState(false);
 
   useEffect(() => {
     const order = new OrderService();
-
     order
-      .getMyOrders({ ...orderInquiry, orderStatus: OrderStatus.PAUSE })
-      .then((data) => setPausedOrders(data))
-      .catch((err) => console.log(err))
+      .getMyOrders({ page: pausedPage, limit: LIMIT, orderStatus: OrderStatus.PAUSE })
+      .then((data) => {
+        setPausedOrders(data);
+        setPausedHasMore(data.length === LIMIT);
+      })
+      .catch((err) => console.log(err));
+  }, [pausedPage, orderBuilder]);
 
+  useEffect(() => {
+    const order = new OrderService();
     order
-      .getMyOrders({ ...orderInquiry, orderStatus: OrderStatus.PROCESS })
-      .then((data) => setProcessOrders(data))
-      .catch((err) => console.log(err))
+      .getMyOrders({ page: processPage, limit: LIMIT, orderStatus: OrderStatus.PROCESS })
+      .then((data) => {
+        setProcessOrders(data);
+        setProcessHasMore(data.length === LIMIT);
+      })
+      .catch((err) => console.log(err));
+  }, [processPage, orderBuilder]);
 
+  useEffect(() => {
+    const order = new OrderService();
     order
-      .getMyOrders({ ...orderInquiry, orderStatus: OrderStatus.FINISH })
-      .then((data) => setFinishedOrders(data))
-      .catch((err) => console.log(err))
-  }, [orderInquiry, orderBuilder]);
+      .getMyOrders({ page: finishedPage, limit: LIMIT, orderStatus: OrderStatus.FINISH })
+      .then((data) => {
+        setFinishedOrders(data);
+        setFinishedHasMore(data.length === LIMIT);
+      })
+      .catch((err) => console.log(err));
+  }, [finishedPage, orderBuilder]);
 
   const handleChange = (e: SyntheticEvent, newValue: string) => {
     setValue(newValue);
@@ -69,7 +88,7 @@ export default function OrdersPage() {
   return (
     <div className={"order-page"}>
       <Container className={"order-container"}>
-      <Stack className={"order-right"}>
+        <Stack className={"order-right"}>
           <Box className={"profile-header"}>
             <div className={"profile-img-container"}>
               <img
@@ -102,8 +121,7 @@ export default function OrdersPage() {
               <YouTubeIcon onClick={() => window.open("https://youtube.com", "_blank")} />
               <InstagramIcon onClick={() => window.open("https://instagram.com", "_blank")} />
               <FacebookIcon onClick={() => window.open("https://facebook.com", "_blank")} />
-              <TelegramIcon onClick={() => window.open("https://t.me/+mFPoMiYbzz01YzRi", "_blank")}
-              />
+              <TelegramIcon onClick={() => window.open("https://t.me/+mFPoMiYbzz01YzRi", "_blank")} />
             </div>
           </Box>
         </Stack>
@@ -117,25 +135,37 @@ export default function OrdersPage() {
                   onChange={handleChange}
                   aria-label="basic tabs example"
                   className={"table_list"}
+                  variant="scrollable"
+                  scrollButtons="auto"
+                  allowScrollButtonsMobile
                 >
-                  <Tab label="PAUSED ORDERS" value={"1"} />
-                  <Tab label="PROCESS ORDERS" value={"2"} />
-                  <Tab label="FINISHED ORDERS" value={"3"} />
+                  <Tab label="PAUSED" value={"1"} />
+                  <Tab label="PROCESS" value={"2"} />
+                  <Tab label="FINISHED" value={"3"} />
                 </Tabs>
               </Box>
             </Box>
             <Stack className={"order-main-content"}>
-              <PausedOrders setValue={setValue} />
-              <ProcessOrders setValue={setValue} />
-              <FinishedOrders />
+              <PausedOrders
+                setValue={setValue}
+                page={pausedPage}
+                setPage={setPausedPage}
+                hasMore={pausedHasMore}
+              />
+              <ProcessOrders
+                setValue={setValue}
+                page={processPage}
+                setPage={setProcessPage}
+                hasMore={processHasMore}
+              />
+              <FinishedOrders
+                page={finishedPage}
+                setPage={setFinishedPage}
+                hasMore={finishedHasMore}
+              />
             </Stack>
           </TabContext>
         </Stack>
-
-
-   
-
-
       </Container>
     </div>
   )

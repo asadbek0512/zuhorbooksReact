@@ -10,6 +10,7 @@ import {
   InputAdornment,
   IconButton,
   Typography,
+  useMediaQuery,
 } from "@mui/material";
 import styled from "styled-components";
 import LoginIcon from "@mui/icons-material/Login";
@@ -56,6 +57,7 @@ interface AuthenticationModalProps {
 export default function AuthenticationModal(props: AuthenticationModalProps) {
   const { signupOpen, loginOpen, handleSignupClose, handleLoginClose } = props;
   const classes = useStyles();
+  const isMobile = useMediaQuery("(max-width: 600px)");
   const [memberNick, setMemberNick] = useState<string>("");
   const [memberPhone, setMemberPhone] = useState<string>("");
   const [memberPassword, setMemberPassword] = useState<string>("");
@@ -142,14 +144,22 @@ export default function AuthenticationModal(props: AuthenticationModalProps) {
         BackdropProps={{ timeout: 500 }}
       >
         <Fade in={signupOpen}>
-          <Box display="flex" width="850px" height="500px" borderRadius="20px" overflow="hidden">
-            <Box width="50%">
-              <ModalImg src="/img/photo1.jpg" alt="Signup visual" />
-            </Box>
+          <Box
+            display="flex"
+            width={isMobile ? "92vw" : "850px"}
+            height={isMobile ? "auto" : "500px"}
+            borderRadius="20px"
+            overflow="hidden"
+          >
+            {!isMobile && (
+              <Box width="50%">
+                <ModalImg src="/img/photo1.jpg" alt="Signup visual" />
+              </Box>
+            )}
             <Box
-              width="50%"
+              width={isMobile ? "100%" : "50%"}
               bgcolor="#F3F2EC"
-              p={5}
+              p={isMobile ? 3 : 5}
               display="flex"
               flexDirection="column"
               alignItems="center"
@@ -279,14 +289,22 @@ export default function AuthenticationModal(props: AuthenticationModalProps) {
         BackdropProps={{ timeout: 500 }}
       >
         <Fade in={loginOpen}>
-          <Box display="flex" width="750px" height="450px" borderRadius="20px" overflow="hidden">
-            <Box width="50%">
-              <ModalImg src="/img/photo1.jpg" alt="Login visual" />
-            </Box>
+          <Box
+            display="flex"
+            width={isMobile ? "92vw" : "750px"}
+            height={isMobile ? "auto" : "450px"}
+            borderRadius="20px"
+            overflow="hidden"
+          >
+            {!isMobile && (
+              <Box width="50%">
+                <ModalImg src="/img/photo1.jpg" alt="Login visual" />
+              </Box>
+            )}
             <Box
-              width="50%"
+              width={isMobile ? "100%" : "50%"}
               bgcolor="#F3F2EC"
-              p={5}
+              p={isMobile ? 3 : 5}
               display="flex"
               flexDirection="column"
               alignItems="center"
