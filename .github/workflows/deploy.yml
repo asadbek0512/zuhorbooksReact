@@ -1,0 +1,62 @@
+name: CI & Deploy
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: npm
+
+      - run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Lint
+        run: npm run lint
+
+  deploy:
+    needs: check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          command_timeout: 30m
+          timeout: 60s
+          script: |
+            cd /home/zuhorbooks-project/zuhorbooksReact
+            git fetch origin develop
+            git reset --hard origin/develop
+            npm ci
+            npm run build
+            pm2 restart ZUHORBOOKS_FRONT || pm2 start "npm run start:prod" --name ZUHORBOOKS_FRONT
+
+      - name: Retry deploy on failure
+        if: failure()
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          command_timeout: 30m
+          timeout: 120s
+          script: |
+            cd /home/zuhorbooks-project/zuhorbooksReact
+            git fetch origin develop
+            git reset --hard origin/develop
+            npm ci
+            npm run build
+            pm2 restart ZUHORBOOKS_FRONT || pm2 start "npm run start:prod" --name ZUHORBOOKS_FRONT

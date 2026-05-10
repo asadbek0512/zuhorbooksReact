@@ -1,46 +1,76 @@
-# Getting Started with Create React App
+# ZuhorBooks
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) TS template.
+Frontend for zuhorbooks.uz — an online book platform where users can browse a catalog, place orders, and manage their profile.
 
-## Available Scripts
+## Tech Stack
 
-In the project directory, you can run:
+| Layer | Technology |
+|---|---|
+| Framework | React 18 + TypeScript (Create React App) |
+| UI | MUI 5 (MaterialTheme) |
+| State | Redux Toolkit + React Context |
+| API | REST (service layer) + Socket.IO |
+| Auth | JWT stored in client state |
+| Deploy | VPS + Nginx |
 
-### `npm start`
+## Getting Started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+**Prerequisites:** Node.js 18+, npm, running ZuhorBooks backend
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```bash
+git clone <repo-url>
+cd Zuhorbooks-react
 
-### `npm test`
+npm install
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Set REACT_APP_API_URL in src/lib/config.ts or .env
 
-### `npm run build`
+npm start
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Open [http://localhost:3000](http://localhost:3000)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Features
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**For Users**
+- Homepage with popular books, new arrivals, top members, advertisements, and events
+- Browse full book catalog with filtering by category and collection
+- Book detail page with description, price, and availability
+- Add books to cart and place orders
+- Order history with status tracking — Process, Paused, Finished
+- Member registration, login, and profile management with photo upload
+- Profile settings and account customization
 
-### `npm run eject`
+**Admin Panel (server-rendered, via backend)**
+- Book (product) management — add, edit, delete
+- Order management and status control
+- Member management and role control
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Project Structure
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+src/
+├── app/
+│   ├── screens/
+│   │   ├── homePage/        # Homepage (popular, new, top users, events)
+│   │   ├── productsPage/    # Book catalog and detail
+│   │   ├── ordersPage/      # Order history (process, paused, finished)
+│   │   ├── userPage/        # Member profile and settings
+│   │   └── helpPage/        # Help and support
+│   ├── components/          # Reusable UI components
+│   ├── services/            # API functions (Member, Product, Order)
+│   ├── context/             # Global auth state + Socket.IO context
+│   └── hooks/               # Custom hooks
+└── lib/
+    ├── types/               # TypeScript interfaces
+    ├── enums/               # Shared enums
+    └── config.ts            # API base URL and constants
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Deployment
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+VPS: production build served via `serve` on port 3004 behind Nginx.
 
-## Learn More
+## Live
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+[https://zuhorbooks.uz](https://zuhorbooks.uz)
