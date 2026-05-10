@@ -65,7 +65,10 @@ export default function AuthenticationModal(props: AuthenticationModalProps) {
   const { setAuthMember } = useGlobals();
 
   const handleUsername = (e: T) => setMemberNick(e.target.value);
-  const handlePhone = (e: T) => setMemberPhone(e.target.value);
+  const handlePhone = (e: T) => {
+    const val = e.target.value.replace(/[^0-9]/g, '');
+    setMemberPhone(val);
+  };
   const handlePassword = (e: T) => setMemberPassword(e.target.value);
 
   const handlePasswordKeyDown = (e: T) => {
@@ -186,7 +189,9 @@ export default function AuthenticationModal(props: AuthenticationModalProps) {
                 fullWidth
                 label="Phone Number"
                 variant="outlined"
+                value={memberPhone}
                 onChange={handlePhone}
+                inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }}
                 sx={inputStyles}
                 InputProps={{
                   startAdornment: (
