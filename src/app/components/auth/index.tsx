@@ -269,7 +269,7 @@ export default function AuthenticationModal(props: AuthenticationModalProps) {
                     transform: "translateY(-2px)",
                   }
                 }}
-                onClick={handleLoginRequest}
+                onClick={handleSignupRequest}
               >
                 <LoginIcon sx={{ mr: 1 }} /> Signup
               </Fab>
