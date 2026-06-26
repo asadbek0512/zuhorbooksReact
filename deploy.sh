@@ -6,3 +6,4 @@ npm ci
 npm run build
 rm -rf ../frontend/*
 cp -r build/* ../frontend/
+pm2 restart zuhorbooks-frontend
